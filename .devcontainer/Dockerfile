@@ -21,5 +21,8 @@ RUN . /etc/os-release \
 # [Optional] Uncomment if you want to install more global node modules
 # RUN su node -c "npm install -g <your-package-list-here>"
 
-
+# Install Cascadia Code font
+RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+    && apt-get install -y fonts-cascadia-code \
+    && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
