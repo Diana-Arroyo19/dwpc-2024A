@@ -3,10 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./server/bin/www"
+    "start": "NODE_ENV=production node ./server/bin/www",
+    "dev": "NODE_ENV=developement babel-watch --watch ./server/views ./server/bin/www"
   },
   "dependencies": {
+    "@babel/cli": "^7.23.9",
+    "@babel/core": "^7.23.9",
+    "@babel/node": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "babel-watch": "^7.8.1",
     "cookie-parser": "~1.4.4",
+    "core-js": "^3.36.0",
     "debug": "~2.6.9",
     "express": "~4.16.1",
     "hbs": "~4.0.4",
