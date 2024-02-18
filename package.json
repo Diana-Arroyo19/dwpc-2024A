@@ -3,8 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production node ./server/bin/www",
-    "dev": "NODE_ENV=developement babel-watch --watch ./server/views ./server/bin/www"
+    "start": "NODE_ENV=production node ./dist/bin/www",
+    "dev": "NODE_ENV=developement babel-watch --watch ./server/views ./server/bin/www",
+    "dev-nodemon": "NODE_ENV=developement nodemon --exec babel-node ./server/bin/www",
+    "clean": "rm -rf dist",
+    "build": "npm run clean && babel ./server --out-dir dist --copy-files"
+   
   },
   "dependencies": {
     "@babel/cli": "^7.23.9",
@@ -19,5 +23,8 @@
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }
