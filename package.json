@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "NODE_ENV=production node ./dist/bin/www",
-    "dev": "NODE_ENV=developement babel-watch --watch ./server/views ./server/bin/www",
+    "start": "PORT=3000 APP_URL='http://localhost' DEBUG=dev-2024A node ./dist/bin/www",
+    "dev": "NODE_ENV=developement PORT=3000 APP_URL='http://localhost' DEBUG=dev-2024A babel-watch --watch ./server/views ./server/bin/www",
     "dev-nodemon": "NODE_ENV=developement nodemon --exec babel-node ./server/bin/www",
+    "devc" : "NODE_ENV=development webpack serve --config ./webpack.config.js --mode development",
     "clean": "rm -rf dist",
     "build": "npm run clean && babel ./server --out-dir dist --copy-files"
   },
