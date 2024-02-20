@@ -1,0 +1,1 @@
+console.log("🎉 Client Server Working powered by webpack 🎉"),async function(){console.log("Calling");const e=await new Promise((e=>{setTimeout((()=>{e("resolved")}),2e3)}));console.log(e)}();

@@ -3,7 +3,7 @@
         [
             "minify",
             {
-                "builIns": false,
+                "builtIns": false,
                 "evaluate": false,
                 "mangle": false
             }
