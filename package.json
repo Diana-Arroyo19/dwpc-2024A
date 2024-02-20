@@ -3,12 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "PORT=3000 APP_URL='http://localhost' DEBUG=dev-2024A node ./dist/bin/www",
-    "dev": "NODE_ENV=developement PORT=3000 APP_URL='http://localhost' DEBUG=dev-2024A babel-watch --watch ./server/views ./server/bin/www",
-    "dev-nodemon": "NODE_ENV=developement nodemon --exec babel-node ./server/bin/www",
+    "start": "node ./server/bin/www",
+    "dev": "nodemon --exec babel-node ./server/bin/www",
     "devc": "NODE_ENV=development && webpack serve --config ./webpack.dev.config.js --mode development",
-    "clean": "rm -rf dist",
-    "build": "npm run clean && babel ./server --out-dir dist --copy-files"
+    "devb": "babel-watch ./server/bin/www",
+    "cleans": "rm -rf dist",
+    "cleanc": "rm -f ./public/bundle.js",
+    "b:s": "npm run cleans && babel ./server --out-dir dist --copy-files",
+    "b:c": "npm run cleanc && webpack --config ./webpack.config.js --mode production",
+    "build": "npm run b:c && npm run b:s"
   },
   "dependencies": {
     "@babel/cli": "^7.23.9",
