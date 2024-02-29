@@ -29,3 +29,4 @@ async function asyncCall() {
 
 // Llmar a la funcion asincrona
 asyncCall();
+show();

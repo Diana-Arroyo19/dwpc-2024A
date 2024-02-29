@@ -5,6 +5,9 @@
 //Importar Extract Plugin
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+// Importando Eslint plugin para webpack
+const ESlintPlugin = require("eslint-webpack-plugin");
+
 // Importar un administrador de rutas de archivos
 const path = require("path");
 
@@ -89,8 +92,10 @@ module.exports = {
   plugins: [
     // 4.1 Instanciar el pluging de mini-extract
     new MiniCssExtractPlugin({
-      // Archivo css de salida
+      //4.1.1 Archivo css de salida
       filename: "styles/app.css",
     }),
+    // 4.2.1 Instanciar el pluging de eslint
+    new ESlintPlugin()
   ],
 };
