@@ -1,7 +1,9 @@
 {
     "parser": "@babel/eslint-parser",
-    "extends":["eslint:recommended"],
-    "rules":{},
+    "extends":["airbnb-base"],
+    "rules":{
+        "no-console":"off"
+    },
     "env": {
         "es6": true,
         "node": true,
