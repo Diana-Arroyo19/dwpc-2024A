@@ -23,6 +23,9 @@ import webpackConfig from '../webpack.dev.config';
 // Impornting winston logger
 import log from './config/winston';
 
+// Importando template-engine
+import configTemplateEngine from './config/templateEngine';
+
 // Creando la intancia express
 const app = express();
 
@@ -59,8 +62,7 @@ if (nodeEnviroment === 'developement') {
 }
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
+configTemplateEngine(app);
 
 app.use(morgan('dev', { stream: log.stream }));
 app.use(express.json());
