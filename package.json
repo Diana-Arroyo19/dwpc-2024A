@@ -14,7 +14,7 @@
     "build": "npm run b:c && npm run b:s",
     "lint:c": "eslint ./client/**/*.js",
     "lint:s": "eslint ./server/**/*.js",
-    "clean:logs" : "rm -rf ./server/logs/*.log"
+    "clean:logs": "rm -rf ./server/logs/*.log"
   },
   "dependencies": {
     "@babel/cli": "^7.23.4",
@@ -29,6 +29,7 @@
     "express": "~4.16.1",
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
+    "materialize-css": "^1.0.0-rc.2",
     "morgan": "~1.9.1",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
